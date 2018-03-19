@@ -3,6 +3,7 @@ html, body {
 }
 
 body {
+    font-size:1.5em;
     padding-top: 55px;
     display: flex;
     text-align: center;
@@ -12,7 +13,7 @@ body {
 main {
     margin: auto;
     padding: 25px;
-    flex: 1 0 auto;
+    flex: auto;
     max-width: 750px;
 }
 
@@ -25,15 +26,17 @@ main {
 /*home page*/
 
 .intro {
-    transform: translateY(22vh);
+   transform: translateY(80%);
 }
 
 .intro > h1 {
-    font-size: 12vh;
+    font-size: 4em;
+    font-weight: bold;
+    
 }
 
 .intro > h2 {
-    font-size: 4vh;
+    font-size: 2em;
 }
 
 .intro > .profile {
@@ -95,13 +98,14 @@ a:hover {
 /*navigation bar icons*/
 
 .navbar-icon {
-    font-size: 125%;
+    font-size: 120%;
     display: inline-block !important;
 }
 
 /*coloured borders at top and bottom of the page*/
 .navbar.navbar-default {
     border-top: var(--border-width) solid var(--accent);
+    font-size: 120%;
 }
 
 /* custome footer */
