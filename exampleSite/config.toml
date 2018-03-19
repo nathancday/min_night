@@ -12,14 +12,14 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "public/"]
 
 [params]
     author = ""
-    description = "A sleek dark-mode toggle-able Hugo theme"
+    description = "A sleek dark-mode-able Hugo theme"
     githubUsername = "nathancday"
-    accent = "maroon" # dark colors do best
+    accent = "191970" # dark colors do best
     showBorder = true
     backgroundColor = "#f5f5f5"
     font = "Raleway" # should match the name on Google Fonts!
     highlight = true
-    highlightStyle = "atelier-heath-light" # make this match accent
+    highlightStyle = "tomorrow-night-blue" # make this match accent
     highlightLanguages = ["r", "go"]
 
 # adjust these as you see fit
