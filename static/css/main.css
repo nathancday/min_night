@@ -48,20 +48,22 @@ main {
 /*apply accent colour to links*/
 
 a:link, a:visited {
-    color: var(--accent);
-}
-a:link.-nightmode {
-    color = "ebe4d1"
+    color: #555555;
 }
 
-a.icon:hover {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: none;
+#bigbody main a {
     color: var(--accent) !important;
 }
+
+#bigfooter a:link, a:visited {
+    color: #cccccc;
+}
+
+#bigfooter a:hover {
+    text-decoration: underline;
+    color: #FFF;
+}
+
 
 /*paginator at bottom of list view*/
 
@@ -105,16 +107,35 @@ a:hover {
 /*coloured borders at top and bottom of the page*/
 .navbar.navbar-default {
     border-top: var(--border-width) solid var(--accent);
+    background-color: var(--accent);
     font-size: 120%;
+    color: #FFF !important;
+}
+.navbar-default .navbar-nav li a {
+    color: #cccccc;
+}
+
+.navbar-default .navbar-nav li a:hover {
+    color: #FFF;
+}
+
+.navbar-default .navbar-nav.-nightmode li a:hover {
+    color: #cccccc;
 }
 
 /* custome footer */
 footer {
-    background-color: #f8f8f8;
+    background-color: var(--accent);
     border-top: #e7e7e7 solid;
     border-top-width: 1px;
-    color:"white";
-    border-bottom: var(--border-width) solid var(--accent);
+    color: #fff;
+    border-bottom: var(--border-width) solid #f8f8f8;
+}
+footer a {
+    color: #cccccc;
+}
+footer p {
+    color: #cccccc;
 }
 
 img {
@@ -153,7 +174,8 @@ img {
 #night-mode-toggle {
     display: inline-block !important;
     padding-top:10px;
-    font-size: 125%;
+    padding-left:10px;
+    font-size: 130%;
 }
 /* built on-top of Custom Style .ios 
    from: http://www.bootstraptoggle.com/ */
