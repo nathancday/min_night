@@ -123,6 +123,10 @@ a:link, a:visited {
     color: #cccccc;
 }
 
+.navbar-default .navbar-brand {
+    color: #cccccc !important;
+}
+
 /* custome footer */
 footer {
     background-color: var(--accent);
