@@ -176,10 +176,8 @@ img {
 
 /* slider attributes match navbar elements */
 #night-mode-toggle {
-    display: inline-block !important;
-    padding-top:10px;
-    padding-left:10px;
     font-size: 100%;
+    padding-top:10px;
 }
 /* built on-top of Custom Style .ios 
    from: http://www.bootstraptoggle.com/ */
