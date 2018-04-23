@@ -4,12 +4,14 @@
 
     <div class="intro">
 
-        {{ with .Site.Params.profilePic }} <img class="profile" src="{{ . }}"> {{ end }}
-
-        <h1>{{ .Site.Title }}</h1>
-
-        <h2>{{ markdownify .Site.Params.Description }}</h2>
-
+        <div class="avatar">
+          <img class="img-circle" src="{{ .Site.BaseURL }}img/{{ .Site.Params.avatar }}" alt="Responsive image">
+        </div>
+        
+        <h2>Hi my name is {{ .Site.Params.author }}, and I am a data explorer.</h2>
+        <div style = "width: 66%; margin: 0 auto;">
+            <h4>By day I do drug discovery, building analysis pipelines and constucting reactive front ends for research. By night I dive into civic data to help the community make better decisions and to keep myself learning. I love all things science and I'm eagar for new challenges where I can help make the world a better place.</h4>
+        </div>
     </div>
 
 </main>
