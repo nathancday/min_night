@@ -11,7 +11,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "public/"]
     post = "/:year/:month/:day/:slug/"
 
 [params]
-    author = "Nate"
+    author = "Nate Day"
     description = "A sleek dark-mode-able Hugo theme"
     githubUsername = "nathancday"
     accent = "#386890" # dark colors do best
