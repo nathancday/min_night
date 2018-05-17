@@ -35,6 +35,34 @@
     <link rel="shortcut icon" href="/images/favicon/favicon.ico">
     <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <!--- --->
+    
+    <!--- Twitter Cards from: https://xvrdm.github.io/2017/10/23/socialize-your-blogdown/ --->
+    {{ if eq .URL "/" }}
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:type" content="website">
+    <meta property="description" content="{{ .Site.Params.description }}">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="{{ .Site.Params.logo }}" >
+    {{ else }}
+    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+    <meta property="og:type" content="article">
+      {{ if .Params.twitterImg }}
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="{{ .Params.twitterImg }}" >
+      {{ else }}
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:image" content="{{ .Site.Params.logo.url }}" >
+      {{ end }}
+    {{ $defaultDescription := printf "Article posted by %s, on %s" .Params.author (.Date.Format "Monday, January 2nd, 2006") }}
+    <meta property="description" content="{{ .Description | default $defaultDescription }}">
+    <meta property="og:description" content="{{ .Description | default $defaultDescription }}">
+    {{ end }}
+    <meta name="twitter:creator" content="{{ .Params.twitterAuthor }}">
+    <meta name="twitter:site" content="{{ .Params.twitterSite }}">
+    <!--- --->
+    
     </head>
 
     {{ if .Site.Params.MathJax | default true }}
