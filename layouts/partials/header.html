@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
     <head>
-        {{ partial "head-open" . }}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ .Title }}</title>
-        {{ if .Site.Params.favicon }}
-        <link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
-        {{ end }}
         {{ partial "css" . }} {{ partial "js" . }} {{ .Hugo.Generator }}
         {{ if .RSSLink }}
         <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
         <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
         {{ end }}
-
         {{ if .Site.GoogleAnalytics }}
+        
         <!-- Global Site Tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments)};
           gtag('js', new Date());
-
           gtag('config', '{{ .Site.GoogleAnalytics }}');
         </script>
         {{ end }}
-        
-    <!--- Favicons from  --->
+
+    <!-- Favicons - https://realfavicongenerator.net/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
@@ -35,33 +30,30 @@
     <link rel="shortcut icon" href="/images/favicon/favicon.ico">
     <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <!--- --->
     
-    <!--- Twitter Cards from: https://xvrdm.github.io/2017/10/23/socialize-your-blogdown/ --->
+    <!-- Twitter Cards - https://xvrdm.github.io/2017/10/23/socialize-your-blogdown/ -->
     {{ if eq .URL "/" }}
     <meta property="og:title" content="{{ .Site.Title }}">
     <meta property="og:type" content="website">
     <meta property="description" content="{{ .Site.Params.description }}">
     <meta property="og:description" content="{{ .Site.Params.description }}">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="{{ .Site.Params.logo }}" >
+    <meta name="twitter:image" content="https://natedayta.com/{{ .Site.Params.logo }}" >
     {{ else }}
-    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+    <meta property="og:title" content="{{ .Title }}">
     <meta property="og:type" content="article">
-      {{ if .Params.twitterImg }}
+      {{ if .Params.twitter }}
       <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:image" content="{{ .Params.twitterImg }}" >
+      <meta name="twitter:image" content="https://natedayta.com/{{ .Params.twitter_img }}" >
       {{ else }}
       <meta name="twitter:card" content="summary">
-      <meta name="twitter:image" content="{{ .Site.Params.logo.url }}" >
+      <meta name="twitter:image" content="https://natedayta.com/{{ .Site.Params.logo }}" >
       {{ end }}
-    {{ $defaultDescription := printf "Article posted by %s, on %s" .Params.author (.Date.Format "Monday, January 2nd, 2006") }}
-    <meta property="description" content="{{ .Description | default $defaultDescription }}">
-    <meta property="og:description" content="{{ .Description | default $defaultDescription }}">
+    <meta property="description" content="{{ .Description }}">
+    <meta property="og:description" content="{{ .Description }}">
     {{ end }}
     <meta name="twitter:creator" content="{{ .Params.twitterAuthor }}">
     <meta name="twitter:site" content="{{ .Params.twitterSite }}">
-    <!--- --->
     
     </head>
 
@@ -73,25 +65,17 @@
     {{ end }}
 
     <body id = "bigbody">
-        {{ partial "body-open" . }}
         <nav class="navbar navbar-default navbar-fixed-top">
-
             <div class="container">
-
                 <div class="navbar-header">
-
                     <a class="navbar-brand visible-xs" href="#">{{ .Title }}</a>
-
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
                 </div>
-
                 <div class="collapse navbar-collapse">
-
                     {{ if .Site.Menus.main }}
                         <ul class="nav navbar-nav">
                             {{ range sort .Site.Menus.main }}
@@ -99,19 +83,14 @@
                             {{ end }}
                         </ul>
                     {{ end }}
-
                     {{ if .Site.Menus.icon }}
                         <ul class="nav navbar-nav navbar-right">
                             {{ range sort .Site.Menus.icon }}
                                 <li class="navbar-icon"><a href="{{ .URL }}"><i class="fa fa-{{ .Name }}"></i></a></li>
                             {{ end }}
-                            
                             {{ partial "toggle"}}
                         </ul>
                     {{ end }}
-
                 </div>
-
             </div>
-
         </nav>

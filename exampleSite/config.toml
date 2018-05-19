@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "MinNight"
-description = "A sleek dark-mode toggle-able Hugo theme"
+title = "min_night"
+description = "An easy reading Hugo blog with night-mode."
 theme = "min_night"
 disqusShortname = ""
 googleAnalytics = ""
@@ -12,7 +12,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "public/"]
 
 [params]
     author = "Nate Day"
-    description = "A sleek dark-mode-able Hugo theme"
+    description = "An easy reading Hugo blog with night-mode."
     githubUsername = "nathancday"
     accent = "#386890" # dark colors do best
     showBorder = true
@@ -59,7 +59,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "public/"]
     weight = 2
 
 [[menu.icon]]
-    url = "https://twitter.com/offallday/"
+    url = "https://twitter.com/natedayta/"
     name = "twitter"
     weight = 3
 
