@@ -133,7 +133,7 @@ footer {
     border-top: #e7e7e7 solid;
     border-top-width: 1px;
     color: #fff;
-    border-bottom: var(--border-width) solid #f8f8f8;
+    /* border-bottom: var(--border-width) solid #f8f8f8; */
 }
 footer a {
     color: #cccccc;
