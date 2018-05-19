@@ -3,14 +3,18 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
-    {{ range .Site.Params.highlightLanguages }} <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/{{ . }}.min.js"></script> {{ end }}
+    {{ range .Site.Params.highlightLanguages }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/{{ . }}.min.js"></script>
+    {{ end }}
 
     <script>hljs.initHighlightingOnLoad();</script>
 
 {{ end }}
 
 <!-- custom -->
-{{ range .Site.Params.js }} <script src="{{ . | absURL }}"></script> {{ end }}
+{{ range .Site.Params.js }}
+<script src="{{ . | absURL }}"></script>
+{{ end }}
 
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -25,7 +29,7 @@
 <!-- dismiss expanded navigation bar with click -->
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
 
-<!-- nightmode css changes -->
+<!-- nightmode-toggle -->
 <script>
 $(document).ready(function(){
     
@@ -35,7 +39,6 @@ $(document).ready(function(){
   
   container.toggleClass(localStorage.toggled);
   stat.bootstrapToggle(localStorage.button).change();
-  
   
   input.on('click', function() {
       if (localStorage.toggled != "-nightmode" ) {
@@ -50,6 +53,3 @@ $(document).ready(function(){
   })
 });
 </script>
-
-
-
