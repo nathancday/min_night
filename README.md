@@ -2,11 +2,11 @@
 
 Blogs are for reading and sharing. This theme tries to make both of those better.
 
-`min_night` is built on top of the great [Minimal](https://github.com/calintat/minimal) theme, but in the never ending journey of customization I decided to make it its own. So while it keeps all of the cool original Minimal features, like:
+`min_night` is built on top of [Minimal](https://github.com/calintat/minimal), and keeps a lot of the cool original features:
 
-- GoogleFonts 
-- Accent color
-- FontAwesome icons
+- Bootstrap
+- GoogleFonts
+- FontAwesome
 - HighlightJS
 
 It also gets a bunch of new add-ons:
@@ -25,14 +25,14 @@ A live demo is available [here](https://natedayta.com).
 
 Installing Hugo themes as submodules is best.
 
-This is how you can get starting with `min_night` using the [QuickStart tutorial](https://gohugo.io/getting-started/quick-start/):
+This is how you can get starting with `min_night` using the [QuickStart tutorial](https://gohugo.io/getting-started/quick-start/). Run each line individually.
 
 ```bash
 hugo new site quick
 cd quick
 git init
 git submodule add https://github.com/nathancday/min_night.git themes/min_night
-cp -r themes/min_night/exampleSite .
+cp -r themes/min_night/exampleSite/ .
 hugo server -D
 ```
 
