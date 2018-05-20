@@ -1,33 +1,50 @@
-# MinNight
+# min_night
 
-A sleek toggleable night-mode theme for [Hugo](https://gohugo.io). Built on top on the great [Minimal](https://github.com/calintat/minimal) theme. Keeps all of the great Minimal stuff, like custom accent color, Google Fonts, FontAwesome menu icons, and layers on:
+Blogs are for reading and sharing. This theme tries to make both of those better.
 
-- A night-mode toggle, for eye easy reading
+`min_night` is built on top of the great [Minimal](https://github.com/calintat/minimal) theme, but in the never ending journey of customization I decided to make it its own. So while it keeps all of the cool original Minimal features, like:
+
+- GoogleFonts 
+- Accent color
+- FontAwesome icons
+- HighlightJS
+
+It also gets a bunch of new add-ons:
+
+- A night-mode toggle, with HTML5 storage to remember view preferences
+- OpenGraph and TwitterCard meta tags for upgrading your social sharing
+- Favicon support via the [RealFaviconGenerator](https://realfavicongenerator.net/)
+- A site logo for index.html (headshot, hexsticker...its up to you)
 - A tags/categories list page template from [Xmin](https://github.com/yihui/hugo-xmin)
-- Updated tag labels to hyperlinks
-- Different list templates for posts and projects
+- Updated tag labels to hyperlinks (categories too)
+- Tweaked list templates for posts and projects
 
 A live demo is available [here](https://natedayta.com).
 
 ## Installation
 
-You can install the theme either as a clone or submodule.
+Installing Hugo themes as submodules is best.
 
-I recommend the latter. From the root of your Hugo site, type the following:
+This is how you can get starting with `min_night` using the [QuickStart tutorial](https://gohugo.io/getting-started/quick-start/):
 
+```bash
+hugo new site quick
+cd quick
+git init
+git submodule add https://github.com/nathancday/min_night.git themes/min_night
+cp -r themes/min_night/exampleSite .
+hugo server -D
 ```
-$ git submodule add https://github.com/nathancday/min_night themes/min_night
-$ git submodule init
-$ git submodule update
-```
 
-Now you can get updates to Minimal in the future by updating the submodule:
+Now your brand new site is being served locally at `localhost:1313`.
+
+Submodules are better because it makes updating the theme easier for future you.
 
 ```
 $ git submodule update --remote themes/min_night
 ```
 
-I use this theme via the `R` pacakge `blogdown`, you can do the same in R.
+Personally I use this theme via the `R` package `blogdown`, and you can too like this:
 
 ```
 library(blogdown)
@@ -36,32 +53,21 @@ new_site(theme = "nathancday/min_night")
 
 ## Configuration
 
-After installation, take a look at the `exampleSite` folder inside `themes/minimal2`.
+To configure most of the customizations in this theme all you need to do is edit the parameters in `quick/config.toml`.
 
-To get started, copy the `config.toml` file inside `exampleSite` to the root of your Hugo site:
+### Colors
 
-```
-$ cp themes/min_night/exampleSite/config.toml .
-```
+- The accent colour can be changed by using the `accent` field in `config.toml`. This is the color of the navbar and footer in day-mode and this is also the color of the body background of your site in night-mode. Dark colors work best.
 
-This file is the centerpiece for easy theme customizations. Some noteable features are described next.
-
-## Features
-
-- The accent colour can be changed by using the `accent` field in `config.toml`. This is the color that will be used as the background of your site in dark-mode. Dark colors work best.
-
-- You can also change the background color of the main page by using `backgroundColor`. The navbar and footer are always light and dark in the their respective modes.
-
-- Add colored 5px borders at the top and bottom of pages by setting `showBorder` to `true`. Even if this is set to `false` the `accent` color will still be used for the main page background in dark-mode.
+- You can also change the background color of the main page by using `backgroundColor`. Default is light grey for easy eye reading. The navbar and footer are always light and dark in the their respective modes.
 
 Example:
 ```toml
 [params]
-    accent = "red"
-    showBorder = true
+    accent = "#006264"
     backgroundColor = "#f5f5f5"
 ```
-You can use either hex codes or color names ("red"), I reccomend using hex codes for more specific color assignments.
+You should always use hex codes.
 
 ### Fonts
 
@@ -69,14 +75,14 @@ The theme uses [Google Fonts](https://fonts.google.com) to load its font. To cha
 
 ```toml
 [params]
-    font = "Raleway" # should match the name on Google Fonts!
+    font = "Mina" # should match the name on Google Fonts!
 ```
 
 ### Syntax highlighting
 
-The theme supports syntax highlighting thanks to [highlight.js](https://highlightjs.org). You can change the color scheme via the `highlightStyle` param. Checkout out the options [here](https://highlightjs.org/static/demo/), make sure your main languages render well. For best results with dark-mode, I reccommend choosing a light background style that matches your `accent` color. You control the languages that are highlighted with the `highlightLanguages` param.
+The theme supports syntax highlighting thanks to [highlight.js](https://highlightjs.org). You can change the color scheme via the `highlightStyle` param. Checkout out the options [here](https://highlightjs.org/static/demo/), make sure your main languages render well. You control the languages that are highlighted with the `highlightLanguages` param.
 
-The style and languages should be written in hyphen-separated lowercase, for example:
+For best aesthetics with dark-mode, I reccommend choosing a light background style that matches your `accent` color. 
 
 ```toml
 [params]
@@ -84,7 +90,28 @@ The style and languages should be written in hyphen-separated lowercase, for exa
     highlightStyle = "solarized-dark"
     highlightLanguages = ["r", "go"]
 ```
+The style and languages should be written in hyphen-separated lowercase.
+
+### Favicons
+
+This theme comes equipped with stock favicons modeled as hex stickers.
+
+To update those, pick out an image of your choosing head over to [RealFaviconGenerator](https://realfavicongenerator.net/) and go through their process. Be sure to append the path `/img/favicon/` at the last step or be prepared to edit the `header.html` file by hand. Download, unzip and place your new files in `quick/static/`. Now you have favicons for everything, branding!
+
+The site logo defaults to using the 192x192 Android favicon but you can change the path for `logo` param in `config.toml`
+
+### Social Sharing
+
+The current set up has two TwitterCard/OpenGraph options depending on the params you specify in your post's front matter. If you add the param `twitter_img` to a post, with the valid image path, then a summary card with large image will be shown. If you don't provide `twitter_img` then a summary card with the site logo will be shown instead. For best scaling large image summary wants a 2:1 ratio image and regular summary wants 1:1. The post `exampleSite/creating-a-new-theme.md` has been tweaked to include these new params, so you can template and test off of that.
+
+The summary description will use the one provided in a post's front matter if it exists or use the generic site description from `config.toml`. You should also adjust the `twitterAuthor` and `twitterSite` params in `config.toml` to point to your account. You can check how your cards are rendering once your website is being publish with the [TwitterCard Validator](https://cards-dev.twitter.com/validator).
 
 
+## Going forward
 
+This theme is something I have been working on for the last 6-months and feel like it is finally ready (enough) to share with the world. I'm sure there a wrinkles in some of it that I have yet to find, so if you get unexpected behavior post an issue and try to keep it as minimal as possible. Ideally bug reports would be reproducible using the [QuickStart tutorial](https://gohugo.io/getting-started/quick-start/) plus whatever changes cause the problem.
+
+Pull requests are literally the best thing since ever, so if you have the idea (and the time) to add something to `min_night` do it! I promise I will respond quickly.
+
+Happy blogging!
 
