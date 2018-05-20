@@ -3,6 +3,8 @@ title: "Creating a New Theme"
 date: 2014-09-28
 tags: ["go", "golang", "hugo", "themes"]
 draft: false
+twitter_img: "img/large_card.png"
+description: "Summary of the post"
 ---
 
 ## Introduction
