@@ -1,5 +1,5 @@
 ---
-title: "{{ replace .TranslationBaseName "-" " " | title }}"
+title: "{{ replace .Name "-" " " | title }}"
 description: ""
 repo: ""
 tags: []
