@@ -119,6 +119,11 @@ The current set up has two TwitterCard/OpenGraph options depending on the params
 The summary description will use the one provided in a post's front matter if it exists or use the generic site description from `config.toml`. You should also adjust the `twitterAuthor` and `twitterSite` params in `config.toml` to point to your account. You can check how your cards are rendering once your website is being publish with the [TwitterCard Validator](https://cards-dev.twitter.com/validator).
 
 
+### Font Awesome
+
+Font Awesome v5 icons are supported. The syntax for using these icons has changed with the version update. You must now include the full name of the icon e.g. `far fa-twitter` which adds a tag that specifies the weight of the icon used.  Note that only free icons are supported by default.  If you are a Font Awesome Pro user, you can add your website as a new project which will generate the code necessary to reference the pro CDN.  Use the HTML code that is generated to replace that in the file at layouts/partials/css.html.
+
+
 ## Going forward
 
 This theme is something I have been working on for the last 6-months and feel like it is finally ready (enough) to share with the world. I'm sure there a wrinkles in some of it that I have yet to find.
