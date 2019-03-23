@@ -50,25 +50,25 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "public/"]
 
 [[menu.icon]]
     url = "mailto:nathancday@gmail.com"
-    name = "envelope-o"
+    name = "far fa-envelope"
     weight = 1
 
 [[menu.icon]]
     url = "https://github.com/NathanCDay"
-    name = "github"
+    name = "fab fa-github"
     weight = 2
 
 [[menu.icon]]
     url = "https://twitter.com/natedayta/"
-    name = "twitter"
+    name = "fab fa-twitter"
     weight = 3
 
 [[menu.icon]]
     url = "https://www.linkedin.com/in/nathan-day-59b48435/"
-    name = "linkedin"
+    name = "fab fa-linkedin"
     weight = 4
 
 [[menu.icon]]
     url = "https://www.stackoverflow.com/users/5878751/nate"
-    name = "stack-overflow"
+    name = "fab fa-stack-overflow"
     weight = 5
