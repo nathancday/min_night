@@ -121,12 +121,12 @@ The summary description will use the one provided in a post's front matter if it
 
 ### Font Awesome
 
-Font Awesome v5 icons are supported. The syntax for using these icons has changed with the version update. You must now include the full name of the icon e.g. `far fa-twitter` which adds a tag that specifies the weight of the icon used.  Note that only free icons are supported by default.  If you are a Font Awesome Pro user, you can add your website as a new project which will generate the code necessary to reference the pro CDN.  Use the HTML code that is generated to replace that in the file at layouts/partials/css.html.
+Font Awesome v5 icons are supported. The syntax for using these icons has changed with the version update. You must now include the full name of the icon e.g. `far fa-twitter` which adds a tag that specifies the weight of the icon used.  Note that only free icons are supported by default.  If you are a Font Awesome Pro user, you can add your website as a new project which will generate the code necessary to reference the pro CDN.  Use the HTML code that is generated to replace that in the file at layouts/partials/css.html. Learn more in the [Font Awesome docs](https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use).
 
 
 ## Going forward
 
-This theme is something I have been working on for the last 6-months and feel like it is finally ready (enough) to share with the world. I'm sure there a wrinkles in some of it that I have yet to find.
+This theme is something I enjoy and hope you do to.
 
 If you get unexpected behavior post an issue and try to keep it as minimal as possible. Ideally bug reports would be reproducible using the [QuickStart tutorial](https://gohugo.io/getting-started/quick-start/) plus whatever changes cause the problem.
 
