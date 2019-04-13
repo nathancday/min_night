@@ -3,11 +3,11 @@
 <div class="pages">
 
     {{ if .Paginator.HasPrev }}
-    <a class="icon pages-icon" href="{{ .Paginator.Prev.URL }}" rel="prev">
+    <a class="icon pages-icon" href="{{ .Paginator.Prev.RelPermalink }}" rel="prev">
         <i class="fas fa-arrow-left"></i>
     </a>
     {{ end }} {{ if .Paginator.HasNext }}
-    <a class="icon pages-icon" href="{{ .Paginator.Next.URL }}" rel="next">
+    <a class="icon pages-icon" href="{{ .Paginator.Next.RelPermalink }}" rel="next">
         <i class="fas fa-arrow-right"></i>
     </a>
     {{ end }}

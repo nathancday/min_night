@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ .Title }}</title>
-        {{ partial "css" . }} {{ partial "js" . }} {{ .Hugo.Generator }}
-        {{ if .RSSLink }}
-        <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-        <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+        {{ partial "css" . }} {{ partial "js" . }} {{ hugo.Generator }}
+        {{ if .RelPermalink }}
+        <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+        <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
         {{ end }}
         {{ if .Site.GoogleAnalytics }}
         
@@ -33,7 +33,7 @@
     <meta name="theme-color" content="#ffffff">
     
     <!-- Twitter Cards - https://xvrdm.github.io/2017/10/23/socialize-your-blogdown/ -->
-    {{ if eq .URL "/" }}
+    {{ if eq .RelPermalink "/" }}
     <meta property="og:title" content="{{ .Site.Title }}">
     <meta property="og:type" content="website">
     <meta property="description" content="{{ .Site.Params.description }}">
@@ -80,14 +80,14 @@
                     {{ if .Site.Menus.main }}
                         <ul class="nav navbar-nav">
                             {{ range sort .Site.Menus.main }}
-                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                                <li><a href="{{ .Pre }}">{{ .Name }}</a></li>
                             {{ end }}
                         </ul>
                     {{ end }}
                     {{ if .Site.Menus.icon }}
                         <ul class="nav navbar-nav navbar-right">
                             {{ range sort .Site.Menus.icon }}
-                                <li class="navbar-icon"><a href="{{ .URL }}"><i class="{{ .Name }}"></i></a></li>
+                                <li class="navbar-icon"><a href="{{ .Pre }}"><i class="{{ .Name }}"></i></a></li>
                             {{ end }}
                             {{ partial "toggle"}}
                         </ul>
