@@ -25,6 +25,32 @@
 
     {{ end }}
 
+    {{ if .Site.Params.talkID }}
+    <h4 class="page-header">Comments</h4>
+    <div id="coral_thread"></div>
+    <script type="text/javascript">
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://csnik.com/assets/js/embed.js';
+          s.onload = function() {
+              Coral.createStreamEmbed({
+                  id: "{{ .Site.Params.talkID }}",
+                  autoRender: true,
+                  rootURL: 'https://{{ .Site.Params.talkHost }}',
+                  // Uncomment these lines and replace with the ID of the
+                  // story's ID and URL from your CMS to provide the
+                  // tightest integration. Refer to our documentation at
+                  // https://docs.coralproject.net for all the configuration
+                  // options.
+                  // storyID: '${storyID}',
+                  // storyURL: '${storyURL}',
+              });
+          };
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    {{ end }}
+
 </main>
 
 {{ partial "footer.html" . }}
