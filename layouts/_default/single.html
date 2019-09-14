@@ -29,7 +29,7 @@
     {{ partial "talk.html" . }}
     {{ end }}
 
-    {{ if and .Site.Params.coralID .Site.Params.coralHost }}
+    {{ if .Site.Params.coralHost }}
     {{ partial "coral.html" . }}
     {{ end }}
 
