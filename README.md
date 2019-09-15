@@ -124,13 +124,21 @@ Font Awesome v5 icons are supported. The syntax for using these icons has change
 
 ### [Coral](https://github.com/coralproject/talk) (formarly Talk)
 
-If you use [Coral](https://github.com/coralproject/talk) instead of Disqus, please follow the step.
 
-1. Delete or Comment out `disqusShortName` in `config.toml`
-1. If you use Talk v4, add Talk Host in [params] section, i.e. `talkHost = "talk.example.com"`
-1. If you use Coral (Talk v5), add Coral Host in [params] section, i.e. `coralHost = "coral.example.com"` 
+[Coral](https://github.com/coralproject/talk) is set of tools back by Mozilla, to make website commenting better. It is aimed at the news industry and has a lot of features for moderating a community, including abilities to mute annoying voices, set up specific notifications and access detailed commentor histories.
 
-**Attention** Talk/Coral Host has to support SSL encryption (in other word, URL starts https://...).
+While Coral can be viewed as alternative to Hugo's built-in support of Disqus, but it is definately geared towrds larger sites and requires extra tech infrastructure. Inorder to run Coral you will need to install additional software on your server, but this theme includes partial layouts for easily adding the required JS + HTML into your pages.
+
+To enable the parts for Talk v4 and Coral (Talk v5) edit your `config.toml` file like this:
+
+```toml
+talkHost = "talk.example.com" # TalkV4
+coralHost = "coral.example.com"
+```
+
+Make sure you comment out (or delete) the `disqusShortName` field in `config.toml` to prevent multiple comment plugins being included. And make sure your host has SSL encryption (eg https://example.com) enabled becasue Talk/Coral requires it.
+
+Talk/Coral templates are graciously contributed by @mzch
 
 ## Going forward
 
