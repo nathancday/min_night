@@ -1,0 +1,9 @@
+    <h4 class="page-header">Comments</h4>
+    <div id="coral_talk_stream"></div>
+    <script src="https://{{ .Site.Params.talkHost }}/static/embed.js" async onload="
+       Coral.Talk.render(document.getElementById('coral_talk_stream'), {
+        talk: 'https://{{ .Site.Params.talkHost }}/'
+      });
+    "></script>
+    <noscript>Please enable JavaScript to view the comments powered by
+                <a href="https://coralproject.net/talk">Talk</>.</noscript>

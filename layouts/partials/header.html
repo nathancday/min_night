@@ -4,11 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ .Title }}</title>
-        {{ partial "css" . }} {{ partial "js" . }} {{ .Hugo.Generator }}
-        {{ if .RSSLink }}
-        <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-        <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
-        {{ end }}
+        <link rel="canonical" href="{{ .Permalink }}">
+        {{ partial "css" . }} {{ partial "js" . }} {{ hugo.Generator }}
+        <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+        <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
         {{ if .Site.GoogleAnalytics }}
         
         <!-- Global Site Tag (gtag.js) - Google Analytics -->
@@ -33,7 +32,7 @@
     <meta name="theme-color" content="#ffffff">
     
     <!-- Twitter Cards - https://xvrdm.github.io/2017/10/23/socialize-your-blogdown/ -->
-    {{ if eq .URL "/" }}
+    {{ if eq .RelPermalink "/" }}
     <meta property="og:title" content="{{ .Site.Title }}">
     <meta property="og:type" content="website">
     <meta property="description" content="{{ .Site.Params.description }}">

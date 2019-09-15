@@ -25,6 +25,14 @@
 
     {{ end }}
 
+    {{ if .Site.Params.talkHost }}
+    {{ partial "talk.html" . }}
+    {{ end }}
+
+    {{ if .Site.Params.coralHost }}
+    {{ partial "coral.html" . }}
+    {{ end }}
+
 </main>
 
 {{ partial "footer.html" . }}
