@@ -129,7 +129,7 @@ Font Awesome v5 icons are supported. The syntax for using these icons has change
 
 While Coral can be viewed as alternative to Hugo's built-in support of Disqus, but it is definately geared towrds larger sites and requires extra tech infrastructure. Inorder to run Coral you will need to install additional software on your server, but this theme includes partial layouts for easily adding the required JS + HTML into your pages.
 
-To enable the parts for Talk v4 and Coral (Talk v5) edit your `config.toml` file like this:
+To enable the parts for Talk v4 and Coral (Talk v5 or later) edit your `config.toml` file like this:
 
 ```toml
 talkHost = "talk.example.com" # TalkV4
