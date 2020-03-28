@@ -128,7 +128,7 @@ If you use [Coral](https://github.com/coralproject/talk) instead of Disqus, plea
 
 1. Delete or Comment out `disqusShortName` in `config.toml`
 1. If you use Talk v4, add Talk Host in [params] section, i.e. `talkHost = "talk.example.com"`
-1. If you use Coral (Talk v5), add Coral Host in [params] section, i.e. `coralHost = "coral.example.com"` 
+1. If you use Coral (Talk v5 or later), add Coral Host in [params] section, i.e. `coralHost = "coral.example.com"` 
 
 **Attention** Talk/Coral Host has to support SSL encryption (in other word, URL starts https://...).
 
